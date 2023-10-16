@@ -1,0 +1,7 @@
+<section role="{{ type }}" class="jumbotron relative w-full bg-cover bg-no-repeat bg-center pt-36 px-2 sm:px-4 md:px-6 lg:px-12 pb-24" style="height: {{ height }}; {{ glide :src="background_image" }}background-image: url({{ url }}); background-position: {{ focus | background_position }};{{ /glide }}">
+    <div class="relative z-5 flex w-full md:w-2/3 lg:w-1/2 h-full {{ text_block_location }}">
+        <div>
+            <h1 class="text-5xl leading-snug" style="color: {{ text_block_color }}">{{ title }}</h1>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,854 @@
+title: Page
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: blocks
+        field:
+          collapse: false
+          previews: false
+          sets:
+            jumbotron:
+              display: Jumbotron
+              fields:
+                -
+                  handle: background_image
+                  field:
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 1
+                    display: 'Background Image'
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: height
+                  field:
+                    options:
+                      100vh: Full
+                      50vh: Half
+                      33vh: Third
+                    multiple: false
+                    max_items: 1
+                    clearable: false
+                    searchable: true
+                    taggable: false
+                    push_tags: false
+                    cast_booleans: false
+                    default: 100vh
+                    display: Height
+                    type: select
+                    icon: select
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: headline
+                  field:
+                    collapse: false
+                    always_show_set_button: false
+                    previews: true
+                    smart_typography: false
+                    buttons:
+                      - bold
+                      - italic
+                    save_html: false
+                    inline: false
+                    toolbar_mode: fixed
+                    link_noopener: false
+                    link_noreferrer: false
+                    target_blank: false
+                    reading_time: false
+                    fullscreen: true
+                    allow_source: true
+                    enable_input_rules: true
+                    enable_paste_rules: true
+                    antlers: false
+                    remove_empty_nodes: false
+                    display: Headline
+                    type: bard
+                    icon: bard
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: subhead
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Subhead
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: text_block_location
+                  field:
+                    options:
+                      'justify-start items-start': 'Top Left'
+                      'justify-center items-start': 'Top Center'
+                      'justify-end items-start': 'Top Right'
+                      'justify-start items-center': 'Middle Left'
+                      'justify-center items-center': 'Middle Center'
+                      'justify-end items-center': 'Middle Right'
+                      'justify-start items-end': 'Bottom Left'
+                      'justify-center items-end': 'Bottom Center'
+                      'justify-end items-end': 'Bottom Right'
+                    multiple: false
+                    max_items: 1
+                    clearable: false
+                    searchable: false
+                    taggable: false
+                    push_tags: false
+                    cast_booleans: false
+                    default: 'justify-center items-center'
+                    display: 'Text Block Location'
+                    type: select
+                    icon: select
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                    width: 50
+                -
+                  handle: text_block_color
+                  field:
+                    theme: classic
+                    lock_opacity: true
+                    default_color_mode: HEXA
+                    color_modes:
+                      - hex
+                    display: 'Text Block Color'
+                    type: color
+                    icon: color
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                    width: 50
+                -
+                  handle: button_label
+                  field:
+                    input_type: text
+                    character_limit: 50
+                    antlers: false
+                    display: 'Button Label'
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    width: 50
+                -
+                  handle: button_link
+                  field:
+                    collections:
+                      - pages
+                    display: 'Button Link'
+                    type: link
+                    icon: link
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - 'required_with:button_label'
+                    width: 50
+            half_image:
+              display: 'Half Image'
+              fields:
+                -
+                  handle: image
+                  field:
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 1
+                    display: Image
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: image_position
+                  field:
+                    options:
+                      left: Left
+                      right: Right
+                    multiple: false
+                    max_items: 1
+                    clearable: false
+                    searchable: true
+                    taggable: false
+                    push_tags: false
+                    cast_booleans: false
+                    default: flex-row
+                    display: 'Image Position'
+                    type: select
+                    icon: select
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: headline
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Headline
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: text
+                  field:
+                    collapse: false
+                    always_show_set_button: false
+                    previews: true
+                    smart_typography: false
+                    buttons:
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - removeformat
+                      - anchor
+                      - image
+                    container: assets
+                    save_html: false
+                    inline: false
+                    toolbar_mode: fixed
+                    link_noopener: false
+                    link_noreferrer: false
+                    target_blank: false
+                    reading_time: false
+                    link_collections:
+                      - pages
+                    fullscreen: true
+                    allow_source: true
+                    enable_input_rules: true
+                    enable_paste_rules: true
+                    antlers: false
+                    remove_empty_nodes: false
+                    display: Text
+                    type: bard
+                    icon: bard
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: button_label
+                  field:
+                    input_type: text
+                    character_limit: 50
+                    antlers: false
+                    display: 'Button Label'
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: button_link
+                  field:
+                    collections:
+                      - pages
+                    display: 'Button Link'
+                    type: link
+                    icon: link
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - 'required_with:button_label'
+            panels:
+              display: Panels
+              fields:
+                -
+                  handle: headline
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Headline
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: main_text
+                  field:
+                    antlers: false
+                    display: 'Main Text'
+                    type: textarea
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_1_image
+                  field:
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 1
+                    display: 'Panel 1 Image'
+                    type: assets
+                    icon: assets
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: panel_2_image
+                  field:
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 1
+                    display: 'Panel 2 Image'
+                    type: assets
+                    icon: assets
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: panel_3_image
+                  field:
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 1
+                    display: 'Panel 3 Image'
+                    type: assets
+                    icon: assets
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_1_headline
+                  field:
+                    input_type: text
+                    character_limit: 50
+                    antlers: false
+                    display: 'Panel 1 Headline'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: panel_2_headline
+                  field:
+                    input_type: text
+                    character_limit: 50
+                    antlers: false
+                    display: 'Panel 2 Headline'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: panel_3_headline
+                  field:
+                    input_type: text
+                    character_limit: 50
+                    antlers: false
+                    display: 'Panel 3 Headline'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_1_text
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'Panel 1 Text'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: panel_2_text
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'Panel 2 Text'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: panel_3_text
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: 'Panel 3 Text'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_1_link_text
+                  field:
+                    input_type: text
+                    character_limit: 24
+                    antlers: false
+                    default: 'Read More'
+                    display: 'Panel 1 Link Text'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_2_link_text
+                  field:
+                    input_type: text
+                    character_limit: 24
+                    antlers: false
+                    default: 'Read More'
+                    display: 'Panel 2 Link Text'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_3_link_text
+                  field:
+                    input_type: text
+                    character_limit: 24
+                    antlers: false
+                    default: 'Read More'
+                    display: 'Panel 3 Link Text'
+                    type: text
+                    icon: text
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_1_link
+                  field:
+                    collections:
+                      - pages
+                    display: 'Panel 1 Link'
+                    type: link
+                    icon: link
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_2_link
+                  field:
+                    collections:
+                      - pages
+                    display: 'Panel 2 Link'
+                    type: link
+                    icon: link
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: panel_3_link
+                  field:
+                    collections:
+                      - pages
+                    display: 'Panel 3 Link'
+                    type: link
+                    icon: link
+                    width: 33
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+            parallax:
+              display: Parallax
+              fields:
+                -
+                  handle: background_image
+                  field:
+                    mode: list
+                    container: assets
+                    folder: background
+                    restrict: true
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 1
+                    display: 'Background Image'
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: headline
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Headline
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: button_label
+                  field:
+                    input_type: text
+                    character_limit: 50
+                    antlers: false
+                    display: 'Button Label'
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: button_link
+                  field:
+                    collections:
+                      - pages
+                    display: 'Button Link'
+                    type: link
+                    icon: link
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - 'required_with:button_label'
+            team:
+              display: Team
+              fields:
+                -
+                  handle: headline
+                  field:
+                    input_type: text
+                    antlers: false
+                    display: Headline
+                    type: text
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: text
+                  field:
+                    antlers: false
+                    display: Text
+                    type: textarea
+                    icon: textarea
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                -
+                  handle: team_members
+                  field:
+                    max_items: 4
+                    mode: default
+                    create: false
+                    collections:
+                      - team
+                    display: 'Team Members'
+                    type: entries
+                    icon: entries
+                    instructions: 'Select which team members you would like to display. Max 4.'
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+            general_content:
+              display: 'General Content'
+              fields:
+                -
+                  handle: content
+                  field:
+                    collapse: false
+                    always_show_set_button: false
+                    previews: true
+                    smart_typography: false
+                    buttons:
+                      - h2
+                      - h3
+                      - bold
+                      - italic
+                      - unorderedlist
+                      - orderedlist
+                      - removeformat
+                      - quote
+                      - anchor
+                      - image
+                      - table
+                      - h1
+                      - alignleft
+                      - aligncenter
+                      - alignright
+                      - alignjustify
+                    container: assets
+                    save_html: false
+                    inline: false
+                    toolbar_mode: fixed
+                    link_noopener: false
+                    link_noreferrer: false
+                    target_blank: false
+                    reading_time: false
+                    link_collections:
+                      - pages
+                    fullscreen: true
+                    allow_source: true
+                    enable_input_rules: true
+                    enable_paste_rules: true
+                    antlers: false
+                    remove_empty_nodes: false
+                    display: Content
+                    type: bard
+                    icon: bard
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                    sets:
+                      inserted_image:
+                        display: 'Inserted Image'
+                        fields:
+                          -
+                            handle: image
+                            field:
+                              mode: list
+                              container: assets
+                              restrict: false
+                              allow_uploads: true
+                              show_filename: true
+                              max_files: 1
+                              display: Image
+                              type: assets
+                              icon: assets
+                              listable: hidden
+                              instructions_position: above
+                              visibility: visible
+                              validate:
+                                - required
+                          -
+                            handle: width
+                            field:
+                              min: 0
+                              max: 100
+                              step: 5
+                              default: 50
+                              display: Width
+                              type: range
+                              icon: range
+                              instructions: "As a percentage of the image's holding container."
+                              listable: hidden
+                              instructions_position: above
+                              visibility: visible
+                              validate:
+                                - required
+                          -
+                            handle: position
+                            field:
+                              options:
+                                left: Left
+                                right: Right
+                              multiple: false
+                              clearable: false
+                              searchable: true
+                              taggable: false
+                              push_tags: false
+                              cast_booleans: false
+                              default: left
+                              display: Position
+                              type: select
+                              icon: select
+                              listable: hidden
+                              instructions_position: above
+                              visibility: visible
+                              validate:
+                                - required
+            page_header:
+              display: 'Page Header'
+              fields:
+                -
+                  handle: background_image
+                  field:
+                    mode: list
+                    container: assets
+                    restrict: false
+                    allow_uploads: true
+                    show_filename: true
+                    max_files: 1
+                    display: 'Background Image'
+                    type: assets
+                    icon: assets
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: height
+                  field:
+                    options:
+                      50vh: Half
+                      33vh: Third
+                    multiple: false
+                    max_items: 1
+                    clearable: false
+                    searchable: true
+                    taggable: false
+                    push_tags: false
+                    cast_booleans: false
+                    default: 50vh
+                    display: Height
+                    type: select
+                    icon: select
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                -
+                  handle: text_block_location
+                  field:
+                    options:
+                      'justify-start items-start': 'Top Left'
+                      'justify-center items-start': 'Top Center'
+                      'justify-end items-start': 'Top Right'
+                      'justify-start items-center': 'Middle Left'
+                      'justify-center items-center': 'Middle Center'
+                      'justify-end items-center': 'Middle Right'
+                      'justify-start items-end': 'Bottom Left'
+                      'justify-center items-end': 'Bottom Center'
+                      'justify-end items-end': 'Bottom Right'
+                    multiple: false
+                    max_items: 1
+                    clearable: false
+                    searchable: false
+                    taggable: false
+                    push_tags: false
+                    cast_booleans: false
+                    default: 'justify-center items-center'
+                    display: 'Text Block Location'
+                    type: select
+                    icon: select
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                    width: 50
+                -
+                  handle: text_block_color
+                  field:
+                    theme: classic
+                    lock_opacity: true
+                    default_color_mode: HEXA
+                    color_modes:
+                      - hex
+                    display: 'Text Block Color'
+                    type: color
+                    icon: color
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    validate:
+                      - required
+                    width: 50
+          display: Blocks
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true

@@ -1,0 +1,86 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: name
+        field:
+          input_type: text
+          antlers: false
+          display: Name
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: phone
+        field:
+          input_type: text
+          antlers: false
+          display: Phone
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          width: 50
+      -
+        handle: email
+        field:
+          input_type: email
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          width: 50
+      -
+        handle: address
+        field:
+          input_type: text
+          antlers: false
+          display: Address
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: city
+        field:
+          input_type: text
+          antlers: false
+          display: City
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: state
+        field:
+          input_type: text
+          antlers: false
+          display: State
+          type: text
+          icon: text
+          width: 25
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: zip
+        field:
+          input_type: text
+          antlers: false
+          display: Zip
+          type: text
+          icon: text
+          width: 25
+          listable: hidden
+          instructions_position: above
+          visibility: visible

@@ -1,0 +1,34 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: primary
+        field:
+          theme: classic
+          lock_opacity: true
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: Primary
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          width: 25
+      -
+        handle: secondary
+        field:
+          theme: classic
+          lock_opacity: true
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: Secondary
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          width: 25

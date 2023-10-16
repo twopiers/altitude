@@ -1,0 +1,46 @@
+<section role="{{ type }}" class="bg-gray-100 py-8 md:py-16">
+    <div class="container mx-auto">
+        <h1 class="text-center text-5xl font-bold mb-8">{{ headline }}</h1>
+        <p class="text-center text-lg">{{ main_text }}</p>
+        <div class="mt-12 grid grid-cols-1 {{ if panel_3_headline }} md:grid-cols-3 {{ else }} md:grid-cols-2 {{ /if }} md:gap-6 lg:gap-12">
+            <div class="flex bg-white flex-col shadow-lg transition duration-300 hover:shadow-2xl">
+                {{ glide:panel_1_image }}
+                    <div class="bg-cover bg-no-repeat w-full h-64" style="background-image: url( {{ url }} ); background-position: {{ focus_css }};"><span role="img" aria-label="{{ alt }}"></span></div>
+                {{ /glide:panel_1_image }}
+                <div class="p-4 md:p-8">
+                    <h3 class="text-2xl font-medium mb-4">{{ panel_1_headline }}</h3>
+                    <p>{{ panel_1_text }}</p>
+                    {{ if panel_1_link }}
+                        <p class="mt-4"><a class="uppercase font-medium" style="color: var(--color-primary);" href="{{ panel_1_link }}">{{ panel_1_link_text }}</a></p>
+                    {{ /if }}
+                </div>
+            </div>
+            <div class="flex bg-white flex-col shadow-lg transition duration-300 hover:shadow-2xl">
+                {{ glide:panel_2_image }}
+                    <div class="bg-cover bg-no-repeat w-full h-64" style="background-image: url( {{ url }} ); background-position: {{ focus_css }};"><span role="img" aria-label="{{ alt }}"></span></div>
+                {{ /glide:panel_2_image }}
+                <div class="p-4 md:p-8">
+                    <h3 class="text-2xl font-medium mb-4">{{ panel_2_headline }}</h3>
+                    <p>{{ panel_2_text }}</p>
+                    {{ if panel_2_link }}
+                            <p class="mt-4"><a class="uppercase font-medium" style="color: var(--color-primary);" href="{{ panel_2_link }}">{{ panel_2_link_text }}</a></p>
+                        {{ /if }}
+                </div>
+            </div>
+            {{ if panel_3_headline }}
+                <div class="flex bg-white flex-col shadow-lg transition duration-300 hover:shadow-2xl">
+                    {{ glide:panel_3_image }}
+                        <div class="bg-cover bg-no-repeat w-full h-64" style="background-image: url( {{ url }} ); background-position: {{ focus_css }};"><span role="img" aria-label="{{ alt }}"></span></div>
+                    {{ /glide:panel_3_image }}
+                    <div class="p-4 md:p-8">
+                        <h3 class="text-2xl font-medium mb-4">{{ panel_3_headline }}</h3>
+                        <p>{{ panel_3_text }}</p>
+                        {{ if panel_3_link }}
+                            <p class="mt-4"><a class="uppercase font-medium" style="color: var(--color-primary);" href="{{ panel_3_link }}">{{ panel_3_link_text }}</a></p>
+                        {{ /if }}
+                    </div>
+                </div>
+            {{ /if }}
+        </div>
+    </div>
+</section>

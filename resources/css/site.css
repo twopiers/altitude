@@ -1,0 +1,101 @@
+* {
+    font-family: Raleway, sans-serif;
+    @apply font-extralight;
+}
+
+b, strong {
+    @apply font-bold;
+}
+
+header {
+    nav {
+        &> ul {
+            @apply flex flex-col lg:flex-row lg:space-x-8;
+            &> li {
+                @apply relative;
+                &> a {
+                    @apply text-white font-medium text-lg transition-colors duration-300;
+                    &:hover {
+                        color: var(--color-primary);
+                    }
+                }
+                svg {
+                    @apply fill-white;
+                }
+                &>ul {
+                    @apply absolute bg-white p-3 rounded shadow flex-col space-y-3;
+                    li {
+                        @apply block;
+                        a {
+                            @apply font-medium text-lg transition-colors duration-300;
+                            color: var(--color-primary);
+                            &:hover {
+                                color: var(--color-secondary);
+                            }
+                        }
+                    }
+                }
+                &:last-child {
+                    &> ul {
+                        @apply right-0;
+                    }
+                }
+            }
+        }
+    }
+    #color-logo {
+        @apply hidden;
+    }
+    &.scrolled {
+        @apply bg-white shadow-2xl;
+        nav {
+            &>ul {
+                &>li {
+                    &>a {
+                        color: var(--color-primary);
+                    }
+                    svg {
+                        fill: var(--color-primary);
+                    }
+                }
+            }
+        }
+        #color-logo {
+            @apply block;
+        }
+        #white-logo {
+            @apply hidden;
+        }
+    }
+}
+
+.jumbotron {
+    &:before {
+        content: "";
+        background-color: rgba(0,0,0,.3);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+button, .button, input[type=submit], input[type=reset] {
+    @apply inline-block rounded bg-transparent border-2 px-8 py-4 font-medium transition-colors duration-300;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    &.white {
+        @apply bg-white border-white;
+    }
+    &:hover {
+        background-color: var(--color-primary);
+        @apply text-white;
+    }
+}
+
+section[role=panels] {
+    &> div {
+        //box-shadow: 0 1px 1px 0 rgb(10 16 34 / 20%);
+    }
+}

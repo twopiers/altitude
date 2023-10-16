@@ -1,0 +1,36 @@
+sections:
+  main:
+    display: Colors
+    fields:
+      -
+        handle: primary
+        field:
+          theme: classic
+          lock_opacity: true
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+            - rgba
+          display: Primary
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          validate:
+            - required
+      -
+        handle: secondary
+        field:
+          theme: classic
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+            - rgba
+          display: Secondary
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          visibility: visible

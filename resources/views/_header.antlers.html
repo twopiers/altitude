@@ -1,0 +1,24 @@
+<header id="header" class="fixed z-10 top-0 left-0 right-0 flex justify-between items-center px-2 sm:px-4 md:px-6 lg:px-12 py-4">
+    {{ if brand.logo_white }}
+        <a id="white-logo" href="/"><img class="w-full md:w-40" src="{{ brand.logo_white.url }}" alt="logo"></a>
+    {{ /if }}
+    {{ if brand.logo_color }}
+        <a id="color-logo" href="/"><img class="w-full md:w-24" src="{{ brand.logo_color }}" alt="logo"></a>
+    {{ /if }}
+    <nav>
+        <ul>
+            {{ nav:main }}
+                <li x-data="{ open: false }">
+                    <a {{ if children }} class="has-children cursor-pointer" @click="open = !open" {{ else }} href="{{ url }}" {{ /if }}>{{ title }}</a> {{ if children }}<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="inline ml-1 w-3"><path d="M199 401c9.4 9.4 24.6 9.4 33.9 0L425 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L41 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L199 401z"/></svg>{{ /if }}
+                    {{ if children }}
+                        <ul
+                            x-show="open"
+                            @click.away="open = false"
+                            x-transition
+                        >{{ *recursive children* }}</ul>
+                    {{ /if }}
+                </li>
+            {{ /nav:main }}
+        </ul>
+    </nav>
+</header>

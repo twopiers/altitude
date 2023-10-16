@@ -1,0 +1,13 @@
+<section role="{{ type }}" class="bg-gray-100 py-8 md:py-16">
+    <div class="container mx-auto">
+        <div class="prose max-w-none">
+            {{ content }}
+                {{ if type == 'text' }}
+                    {{ text }}
+                {{ elseif type == 'inserted_image' }}
+                    <img src="{{ image:url }}" alt="{{ image:alt }}" style="width: {{ width }}%" class="{{ if position == "left" }} float-left mr-4 mb-4 {{ else }} float-right ml-4 mb-4 {{ /if }}">
+                {{ /if }}
+            {{ /content }}
+        </div>
+    </div>
+</section>

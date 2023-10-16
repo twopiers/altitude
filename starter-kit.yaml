@@ -1,0 +1,11 @@
+export_paths:
+  - content
+  - config/statamic/assets.php
+  - resources/blueprints
+  - resources/css/site.css
+  - resources/views
+  - public/assets
+  - public/css
+  - package.json
+  - tailwind.config.js
+  - webpack.mix.js

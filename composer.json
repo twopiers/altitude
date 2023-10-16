@@ -1,0 +1,9 @@
+{
+    "name": "my-vendor-name/altitude-theme",
+    "extra": {
+        "statamic": {
+            "name": "Altitude Theme",
+            "description": "Altitude Theme starter kit"
+        }
+    }
+}
